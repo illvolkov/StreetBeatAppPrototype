@@ -5,4 +5,17 @@
 //  Created by Ilya Volkov on 02.09.2022.
 //
 
-import Foundation
+import UIKit
+
+class TabBarCoordinator: Coordinator {
+    let window: UIWindow
+    
+    init(window: UIWindow) {
+        self.window = window
+    }
+    
+    func start() {
+        let tabBarController = TabBarController()
+        window.rootViewController = tabBarController
+    }
+}

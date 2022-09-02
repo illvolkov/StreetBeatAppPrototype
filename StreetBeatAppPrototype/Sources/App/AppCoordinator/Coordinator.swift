@@ -5,4 +5,8 @@
 //  Created by Ilya Volkov on 02.09.2022.
 //
 
-import Foundation
+import UIKit
+
+protocol Coordinator {
+    func start()
+}
