@@ -8,11 +8,18 @@
 import UIKit
 
 class AppCoordinator: Coordinator {
-    let window: UIWindow
+    
+    //MARK: - Private properties
+    
+    private let window: UIWindow
+    
+    //MARK: - Initial
     
     init(window: UIWindow) {
         self.window = window
     }
+    
+    //MARK: - Functions
     
     func start() {
         showTabBar()

@@ -8,21 +8,21 @@
 import UIKit
 
 class TabBarController: UITabBarController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        generateTabBar()
-    }
-        
-    private func generateTabBar() {
-        viewControllers = [
-            generate(viewController: CatalogController(),
-                     image: UIImage(named: "glass"),
-                     selectedImage: UIImage(named: "glass.selected"))
-        ]
+        setupTabBar()
     }
     
-    private func generate(viewController: UIViewController, image: UIImage?, selectedImage: UIImage?) -> UIViewController {
+    private func setupTabBar() {
+        tabBar.backgroundColor = .white
+    }
+    
+    //MARK: - Functions
+    
+    func generate(viewController: UIViewController, image: UIImage?, selectedImage: UIImage?) -> UIViewController {
+        viewController.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.clear], for: .normal)
         viewController.tabBarItem.image = image?.withRenderingMode(.alwaysOriginal)
         viewController.tabBarItem.selectedImage = selectedImage?.withRenderingMode(.alwaysOriginal)
         return viewController
