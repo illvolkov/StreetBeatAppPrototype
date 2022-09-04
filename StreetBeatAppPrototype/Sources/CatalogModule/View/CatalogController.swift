@@ -52,6 +52,7 @@ class CatalogController: UIViewController {
     
     private lazy var segmentedControll: SegmentedControl = {
         let segmentedControl = SegmentedControl(frame: .zero, buttonTitle: ["Мужчины", "Женщины", "Дети"])
+        segmentedControl.backgroundColor = .clear
         return segmentedControl
     }()
     

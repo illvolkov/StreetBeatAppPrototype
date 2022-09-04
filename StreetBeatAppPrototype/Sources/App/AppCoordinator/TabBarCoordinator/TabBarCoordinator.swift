@@ -26,11 +26,16 @@ class TabBarCoordinator: Coordinator {
         
         let catalogCoordinator = CatalogCoordinator(navigationController: UINavigationController(rootViewController: CatalogController()))
         catalogCoordinator.start()
+        let favoritesCoordinator = FavoritesCoordinator(navigationController: UINavigationController(rootViewController: FavoritesController()))
+        favoritesCoordinator.start()
         
         tabBarController.viewControllers = [
-            tabBarController.generate(viewController: catalogCoordinator.navigationController!,
+            tabBarController.generate(viewController: catalogCoordinator.navigationController,
                                       image: UIImage(named: "glass"),
-                                      selectedImage: UIImage(named: "glass.selected"))
+                                      selectedImage: UIImage(named: "glass.selected")),
+            tabBarController.generate(viewController: favoritesCoordinator.navigationController,
+                                      image: UIImage(named: "heart"),
+                                      selectedImage: UIImage(named: "heart.selected"))
         ]
         
         

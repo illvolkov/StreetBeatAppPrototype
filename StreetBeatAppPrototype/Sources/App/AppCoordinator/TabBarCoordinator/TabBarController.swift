@@ -21,10 +21,13 @@ class TabBarController: UITabBarController {
     
     //MARK: - Functions
     
-    func generate(viewController: UIViewController, image: UIImage?, selectedImage: UIImage?) -> UIViewController {
-        viewController.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.clear], for: .normal)
-        viewController.tabBarItem.image = image?.withRenderingMode(.alwaysOriginal)
-        viewController.tabBarItem.selectedImage = selectedImage?.withRenderingMode(.alwaysOriginal)
-        return viewController
+    func generate(viewController: UIViewController?, image: UIImage?, selectedImage: UIImage?) -> UIViewController {
+        if let viewController = viewController {
+            viewController.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.clear], for: .normal)
+            viewController.tabBarItem.image = image?.withRenderingMode(.alwaysOriginal)
+            viewController.tabBarItem.selectedImage = selectedImage?.withRenderingMode(.alwaysOriginal)
+            return viewController
+        }
+        return UIViewController()
     }
 }
