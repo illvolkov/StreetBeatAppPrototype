@@ -17,41 +17,11 @@ class CatalogController: UIViewController {
     private var catalogs = [Catalog]()
     
     //MARK: - Views
-        
-    private lazy var searchBar: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = UIColor(rgb: 0xEBEEF1)
-        textField.placeholder = "Что ты ищешь?"
-        textField.layer.cornerRadius = view.frame.width * 0.01
-        textField.layer.masksToBounds = true
-        
-        let glassImage = UIImageView(frame: CGRect(x: 8, y: 2, width: 15, height: 15))
-        glassImage.tintColor = .lightGray
-
-        let qrCodeButton = UIButton(frame: CGRect(x: 0, y: -2, width: 23, height: 23))
-        
-        let glassView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 18))
-        let qrCodeView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 18))
-        
-        let glassIcon = UIImage(systemName: "magnifyingglass")
-        let qrCodeIcon = UIImage(systemName: "qrcode.viewfinder")
-        
-        glassImage.image = glassIcon
-        qrCodeButton.setImage(qrCodeIcon, for: .normal)
-        qrCodeButton.tintColor = .black
-
-        glassView.addSubview(glassImage)
-        qrCodeView.addSubview(qrCodeButton)
-        
-        textField.leftViewMode = UITextField.ViewMode.always
-        textField.rightViewMode = UITextField.ViewMode.always
-        textField.leftView = glassView
-        textField.rightView = qrCodeView
-        return textField
-    }()
     
-    private lazy var segmentedControll: SegmentedControl = {
-        let segmentedControl = SegmentedControl(frame: .zero, buttonTitle: ["Мужчины", "Женщины", "Дети"])
+    private lazy var searchBar = SearchBar()
+    
+    private lazy var segmentedControl: SegmentedControl = {
+        let segmentedControl = SegmentedControl(frame: .zero, buttonTitle: ["Мужчинам", "Женщинам", "Детям"])
         segmentedControl.backgroundColor = .clear
         return segmentedControl
     }()
@@ -90,7 +60,7 @@ class CatalogController: UIViewController {
     
     private func setupHiearchy() {
         view.addSubview(searchBar)
-        view.addSubview(segmentedControll)
+        view.addSubview(segmentedControl)
         view.addSubview(tableView)
     }
     
@@ -102,13 +72,13 @@ class CatalogController: UIViewController {
         searchBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         searchBar.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1).isActive = true
         
-        segmentedControll.translatesAutoresizingMaskIntoConstraints = false
-        segmentedControll.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 15).isActive = true
-        segmentedControll.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
-        segmentedControll.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControl.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 15).isActive = true
+        segmentedControl.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+        segmentedControl.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: segmentedControll.bottomAnchor, constant: 10).isActive = true
+        tableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 10).isActive = true
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true

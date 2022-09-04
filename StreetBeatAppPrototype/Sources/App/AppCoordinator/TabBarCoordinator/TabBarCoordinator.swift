@@ -28,6 +28,8 @@ class TabBarCoordinator: Coordinator {
         catalogCoordinator.start()
         let favoritesCoordinator = FavoritesCoordinator(navigationController: UINavigationController(rootViewController: FavoritesController()))
         favoritesCoordinator.start()
+        let streetBeatCoordinator = StreetBeatCoordinator(navigationController: UINavigationController(rootViewController: StreetBeatController()))
+        streetBeatCoordinator.start()
         
         tabBarController.viewControllers = [
             tabBarController.generate(viewController: catalogCoordinator.navigationController,
@@ -35,7 +37,10 @@ class TabBarCoordinator: Coordinator {
                                       selectedImage: UIImage(named: "glass.selected")),
             tabBarController.generate(viewController: favoritesCoordinator.navigationController,
                                       image: UIImage(named: "heart"),
-                                      selectedImage: UIImage(named: "heart.selected"))
+                                      selectedImage: UIImage(named: "heart.selected")),
+            tabBarController.generate(viewController: streetBeatCoordinator.navigationController,
+                                      image: UIImage(named: "streetBeat"),
+                                      selectedImage: UIImage(named: "streetBeat.selected"))
         ]
         
         
