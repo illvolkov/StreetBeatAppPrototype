@@ -32,6 +32,8 @@ class TabBarCoordinator: Coordinator {
         streetBeatCoordinator.start()
         let basketCoordinator = BasketCoordinator(navigationController: UINavigationController(rootViewController: BasketController()))
         basketCoordinator.start()
+        let myInfoCoordinator = MyInfoCoordinator(navigationController: UINavigationController(rootViewController: MyInfoController()))
+        myInfoCoordinator.start()
         
         tabBarController.viewControllers = [
             tabBarController.generate(viewController: catalogCoordinator.navigationController,
@@ -45,9 +47,13 @@ class TabBarCoordinator: Coordinator {
                                       selectedImage: UIImage(named: "streetBeat.selected")),
             tabBarController.generate(viewController: basketCoordinator.navigationController,
                                       image: UIImage(named: "basket"),
-                                      selectedImage: UIImage(named: "basket.selected"))
+                                      selectedImage: UIImage(named: "basket.selected")),
+            tabBarController.generate(viewController: myInfoCoordinator.navigationController,
+                                      image: UIImage(named: "person"),
+                                      selectedImage: UIImage(named: "person.selected"))
         ]
         
+        tabBarController.selectedIndex = 2
         
         window.rootViewController = tabBarController
     }
