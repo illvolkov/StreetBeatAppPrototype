@@ -43,6 +43,9 @@
 		04D81E1A28C5643C00BA4119 /* BasketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D81E1928C5643C00BA4119 /* BasketController.swift */; };
 		04D81E1C28C5647300BA4119 /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D81E1B28C5647300BA4119 /* BasketViewModel.swift */; };
 		04D81E1E28C5648A00BA4119 /* BasketCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D81E1D28C5648A00BA4119 /* BasketCoordinator.swift */; };
+		04D81E2528C6008F00BA4119 /* MyInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D81E2428C6008F00BA4119 /* MyInfoCoordinator.swift */; };
+		04D81E2728C600A300BA4119 /* MyInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D81E2628C600A300BA4119 /* MyInfoController.swift */; };
+		04D81E2928C600AC00BA4119 /* MyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D81E2828C600AC00BA4119 /* MyInfoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +87,9 @@
 		04D81E1928C5643C00BA4119 /* BasketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketController.swift; sourceTree = "<group>"; };
 		04D81E1B28C5647300BA4119 /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
 		04D81E1D28C5648A00BA4119 /* BasketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCoordinator.swift; sourceTree = "<group>"; };
+		04D81E2428C6008F00BA4119 /* MyInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoCoordinator.swift; sourceTree = "<group>"; };
+		04D81E2628C600A300BA4119 /* MyInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoController.swift; sourceTree = "<group>"; };
+		04D81E2828C600AC00BA4119 /* MyInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				0437F11D28C23A8300231DC2 /* App */,
+				04D81E1F28C5FFCD00BA4119 /* MyInfoModule */,
 				04D81E1428C563DE00BA4119 /* BasketModule */,
 				04D81DF028C4C34000BA4119 /* StreetBeatModule */,
 				04D81DE628C4AB1600BA4119 /* FavoritesModule */,
@@ -365,6 +372,40 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		04D81E1F28C5FFCD00BA4119 /* MyInfoModule */ = {
+			isa = PBXGroup;
+			children = (
+				04D81E2028C5FFD800BA4119 /* MyInfoCoordinator */,
+				04D81E2128C5FFDF00BA4119 /* View */,
+				04D81E2228C5FFE400BA4119 /* ViewModel */,
+			);
+			path = MyInfoModule;
+			sourceTree = "<group>";
+		};
+		04D81E2028C5FFD800BA4119 /* MyInfoCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				04D81E2428C6008F00BA4119 /* MyInfoCoordinator.swift */,
+			);
+			path = MyInfoCoordinator;
+			sourceTree = "<group>";
+		};
+		04D81E2128C5FFDF00BA4119 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04D81E2628C600A300BA4119 /* MyInfoController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04D81E2228C5FFE400BA4119 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04D81E2828C600AC00BA4119 /* MyInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -442,6 +483,7 @@
 				04D81E1C28C5647300BA4119 /* BasketViewModel.swift in Sources */,
 				04D81DF628C4C39100BA4119 /* StreetBeatController.swift in Sources */,
 				04D81DEF28C4AC2900BA4119 /* FavoritesViewModel.swift in Sources */,
+				04D81E2728C600A300BA4119 /* MyInfoController.swift in Sources */,
 				04D81DEC28C4AB9700BA4119 /* FavoritesController.swift in Sources */,
 				04D81E0728C5097E00BA4119 /* PictureCollectionViewCell.swift in Sources */,
 				0494134C28C2A4A600C60E44 /* CatalogCoordinator.swift in Sources */,
@@ -459,8 +501,10 @@
 				0494134528C2827800C60E44 /* TabBarController.swift in Sources */,
 				04D81DE928C4AB3900BA4119 /* FavoritesCoordinator.swift in Sources */,
 				0437F10A28C238AF00231DC2 /* AppDelegate.swift in Sources */,
+				04D81E2928C600AC00BA4119 /* MyInfoViewModel.swift in Sources */,
 				04D81DF828C4C3D800BA4119 /* StreetBeatCoordinator.swift in Sources */,
 				04D81E0F28C5610000BA4119 /* SectionType.swift in Sources */,
+				04D81E2528C6008F00BA4119 /* MyInfoCoordinator.swift in Sources */,
 				04D81E1328C5615900BA4119 /* Catalogs.swift in Sources */,
 				0494133E28C2735000C60E44 /* TabBarCoordinator.swift in Sources */,
 				0494134828C29C0000C60E44 /* CatalogViewModel.swift in Sources */,
